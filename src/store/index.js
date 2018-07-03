@@ -73,7 +73,7 @@ export const store = new Vuex.Store({
             .catch(error => {
               commit('setError', `Couldn't fetch data from server`);
               commit('setLoading', false);
-              reject(`Couldn't fetch data from server`);
+              reject(`GitHub api call limit exceeded.Try after somtime.`);
           })
         })
       }
@@ -91,6 +91,9 @@ export const store = new Vuex.Store({
             totalClosedIssues = totalCount;
             resolve(totalCount);
           }).catch(error => {
+            error = JSON.parse(JSON.stringify(error));
+            if (error.response.status == 403)
+              reject(`GitHub api call limit exceeded. Try after somtime.`); 
             reject(`username or repository name doesn't match`);
           })
         })

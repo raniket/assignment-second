@@ -46,7 +46,7 @@
             <v-card>
               <v-card-text>
                 - For example you can enter robin850 in 'GitHub username*' field and carrierwave-dropbox in 'Repository name*' field.<br>
-                - Sometime it may not work if you are trying to access repository that has a large number of closed issues.</v-card-text>
+                - Sometime it may not work if you are trying to access repository that has a large number of closed issues, because of github api call limit.</v-card-text>
             </v-card>
           </v-expansion-panel-content>
         </v-expansion-panel>
