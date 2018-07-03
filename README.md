@@ -1,4 +1,4 @@
-# assignment-second
+# Using Github API
 
 > Using Github API (https://developer.github.com/v3/), find total number of issues that have been closed on a repository of a given owner and represent the same info in card format.
 
