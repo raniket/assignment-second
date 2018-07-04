@@ -89,6 +89,7 @@ export const store = new Vuex.Store({
           return Vue.http.get(url).then(data => {
             let totalCount = data.data.total_count;
             totalClosedIssues = totalCount;
+            if (totalClosedIssues === 0) reject(`This repository doesn't have any closed issues.`);
             resolve(totalCount);
           }).catch(error => {
             error = JSON.parse(JSON.stringify(error));
